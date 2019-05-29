@@ -1,22 +1,17 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-
-/*
-This exercise will help you practice many of your newly aquired React skills.
-
-The instructions are included in the `instructions.md` file.
-*/
+import ChatWindow from './ChatWindow';
 
 const users = [{ username: 'Amy' }, { username: 'John' }];
 
-const messages = [
-  { username: 'Amy', text: 'Hi, Jon!' },
-  { username: 'Amy', text: 'How are you?' },
-  { username: 'John', text: 'Hi, Amy! Good, you?' },
-];
-
 class App extends Component {
+  state = {
+    username: '',
+    message: '',
+  };
+
+
   /*
   If the user did not type anything, he/she should not be
   allowed to submit.
@@ -26,6 +21,8 @@ class App extends Component {
   };
 
   render() {
+    const { messages } = this.state;
+
     return (
       <div className="App">
         <header className="App-header">
