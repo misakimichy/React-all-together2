@@ -1,7 +1,7 @@
 ### How I solved.
 
 This is a note how I solved this exercise based on the given starter template. 
-This is the exercise of lesson 3 State Managemenet, React Nanodegree by Udacity.
+This is the exercise of lesson 3 State Management, React Nanodegree by Udacity.
 
 **Task**: Add interactivity to the app by refactoring the static code in this
 template. The goal is to build a React app that shows 2 chat windows for the
