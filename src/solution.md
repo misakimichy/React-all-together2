@@ -13,14 +13,20 @@ I followed steps from the [Thinking in React Guide](https://reactjs.org/docs/thi
 
 #### Step 1. Break down the app into a hierarchy of components. Draw a box around each React component.
 |- App
+
 |-- ChatWindow
+
 |--- MessageHistory
+
 |--- AddMessage
 
 #### Step 2. Determine the data in our app.
 (1) user - shown in the main area of ChatWindow, it's also shown in MessageHistory
+
 (2) users - shown in both messageHistory windows
+
 (3) messages - shown in MessageHistory
+
 (4) new message - shown inside the AddMessage component, added to the both MessageHistory windows
 
 #### Step 3. Figure out the data that should be a part of our state:
@@ -34,8 +40,11 @@ I followed steps from the [Thinking in React Guide](https://reactjs.org/docs/thi
 
 
 (1) user - not state 
+
 (2) users - not state
+
 (3) messages - state - it changes over time and cannot be computed based on any other state or props
+
 (4) new message - state - it changes over time and cannot be computed based on any other state or props
 
 #### Step 4. Identify where each piece of state lives.
