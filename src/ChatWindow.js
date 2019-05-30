@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import MessageHistory from './MessageHiostory';
+import MessageHistory from './MessageHistory';
+import AddMessage from './AddMessage';
 
 class ChatWindow extends Component {
     onMessage = message => {
