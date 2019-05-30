@@ -3,14 +3,21 @@ import logo from './logo.svg';
 import './App.css';
 import ChatWindow from './ChatWindow';
 
-const users = [{ username: 'Amy' }, { username: 'John' }];
-
 class App extends Component {
+  users = [{ username: 'Coop' }, { username: 'Piroshki' }];
   state = {
-    username: '',
-    message: '',
+    messages: [],
   };
 
+  onMessage = (username, message) => {
+    const newMessage = {
+      [username]: username,
+      [message]: message,
+    };
+    this.setState(currentState => ({
+      messages: [currentState.messages.concat([newMessage])],
+    }));
+  };
 
   /*
   If the user did not type anything, he/she should not be
@@ -30,11 +37,16 @@ class App extends Component {
           <h1 className="App-title">ReactND - Coding Practice</h1>
         </header>
         <div className="container">
-          <div className="chat-window">
-            <h2>Super Awesome Chat</h2>
-            <div className="name sender">{users[0].username}</div>
+          {this.users.map(user => (
+            <ChatWindow 
+            key={user.username}
+            user={user}
+            messages={messages}
+            onMessage={this.onMessage}
+          />
+          ))}
 
-            <ul className="message-list">
+          {/* <ul className="message-list">
               {messages.map((message, index) => (
                 <li
                   key={index}
