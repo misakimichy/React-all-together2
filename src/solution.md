@@ -44,9 +44,9 @@ I followed steps from the [Thinking in React Guide](https://reactjs.org/docs/thi
 
 (2) users - not state
 
-(3) messages - state - it changes over time and cannot be computed based on any other state or props
+(3) messages - state
 
-(4) new message - state - it changes over time and cannot be computed based on any other state or props
+(4) new message - state
 
 #### Step 4. Identify where each piece of state lives.
 
