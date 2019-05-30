@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import MessageHistory from './MessageHiostory';
 
 class ChatWindow extends Component {
     onMessage = message => {
@@ -13,8 +14,8 @@ class ChatWindow extends Component {
             <div className="chat-window">
                 <h2>Super Awesome Chat</h2>
                 <div className="name sender">{user.username}</div>
-                <MessageHistory />
-                <AddMessage />
+                <MessageHistory user={user} messages={messages}/>
+                <AddMessage onMessage={this.onMessage} messages={messages} />
             </div>
         );
     }
@@ -25,6 +26,6 @@ ChatWindow.propTypes = {
     user: PropTypes.object.isRequired,
     messages: PropTypes.array.isRequired,
     onMessage: PropTypes.func.isRequired,
-}
+};
 
 export default ChatWindow;
