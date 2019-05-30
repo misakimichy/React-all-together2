@@ -6,18 +6,54 @@ class AddMessage extends Component {
         message: '',
     };
 
+    // Update state
+    handleInputChange = event => {
+        const { value } = event.target;
+        this.setState(() => ({
+            message: value,
+        }));
+    };
+
     handleSend = event => {
         event.preventDefault();
         this.props.onMessage(this.state.message);
+    };
+
+    isDisabled = () => {
+        const { message } = this.state;
+        return message === '';
+    };
+
+    render() {
+        const { message } = this.state;
+
+        return (
+            <div>
+                <form onSubmit={this.handleSend} className="input-group">
+                    <input
+                        type="text"
+                        className="form-control"
+                        placeholder="Enter your message..."
+                        value={message}
+                        onChange={this.handleInputChange}
+                    />
+                    <div className="input-group-append">
+                        <button 
+                            className="btn submit-button" 
+                            disabled={this.isDisabled()}
+                        >
+                            SEND
+                        </button>
+                    </div>
+                </form>
+            </div> 
+        )
     }
-
-
 };
 
 // Add Prop-types
 AddMessage.propTypes = {
     onMessage: PropTypes.func.isRequired,
-    messages: PropTypes.array.isRequired,
 };
 
 export default AddMessage;
