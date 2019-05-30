@@ -5,7 +5,7 @@ import AddMessage from './AddMessage';
 
 class ChatWindow extends Component {
     onMessage = message => {
-        this.props.onPostMessage(this.props.user.username, message);
+        this.props.onMessage(this.props.user.username, message);
     };
 
     render() {
@@ -16,7 +16,7 @@ class ChatWindow extends Component {
                 <h2>Super Awesome Chat</h2>
                 <div className="name sender">{user.username}</div>
                 <MessageHistory user={user} messages={messages}/>
-                <AddMessage onMessage={this.onMessage} messages={messages} />
+                <AddMessage onMessage={this.onMessage} />
             </div>
         );
     }
