@@ -3,13 +3,17 @@ import PropTypes from 'prop-types';
 import MessageHistory from './MessageHistory';
 import AddMessage from './AddMessage';
 
+/* 
+Add message to the both chat window.
+Pass onMessage callback function to AddMessage component.
+*/
+
 class ChatWindow extends Component {
     onMessage = message => {
         this.props.onMessage(this.props.user.username, message);
     };
 
     render() {
-        // console.log('Props', this.props);
         const { user, messages } = this.props;
         return (
             <div className="chat-window">

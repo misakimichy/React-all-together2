@@ -16,6 +16,7 @@ class AddMessage extends Component {
 
     handleSend = event => {
         event.preventDefault();
+        // Invoke the callback function
         this.props.onMessage(this.state.message);
     };
 
