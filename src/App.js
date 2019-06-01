@@ -15,8 +15,8 @@ class App extends Component {
 
   onMessage = (username, message) => {
     const newMessage = {
-      ['username']: username,
-      ['text']: message,
+      username: username,
+      text: message,
     };
     this.setState(currentState => ({
       messages: [currentState.messages.concat([newMessage])],
