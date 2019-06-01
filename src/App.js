@@ -6,7 +6,11 @@ import ChatWindow from './ChatWindow';
 class App extends Component {
   users = [{ username: 'Coop' }, { username: 'Piroshki' }];
   state = {
-    messages: [],
+    messages: [{
+        username: 'Coop',
+        text: 'Hey bro'
+      }
+    ],
   };
 
   onMessage = (username, message) => {
