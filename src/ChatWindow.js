@@ -9,8 +9,11 @@ Pass onMessage callback function to AddMessage component.
 */
 
 class ChatWindow extends Component {
+    // Combine message and username arguments
     onMessage = message => {
-        this.props.onMessage(this.props.user.username, message);
+        const { onMessage, user } = this.props;
+        // This onMessage belongs to ChatWindow, which comes from App.js
+        onMessage(user.username, message);
     };
 
     render() {
