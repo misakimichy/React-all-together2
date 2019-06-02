@@ -7,6 +7,7 @@ class AddMessage extends Component {
     };
 
     // Update state
+    // Gather values from the input event target
     handleInputChange = event => {
         const { value } = event.target;
         this.setState(() => ({

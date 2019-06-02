@@ -13,7 +13,8 @@ class App extends Component {
     ],
   };
 
-  onMessage = (username, message) => {
+  // Manage the central app state
+  handleMessage = (username, message) => {
     const newMessage = {
       username: username,
       text: message,
@@ -38,7 +39,7 @@ class App extends Component {
             key={user.username}
             user={user}
             messages={messages}
-            onMessage={this.onMessage}
+            onMessage={this.handleMessage}
           />
           ))}
         </div>
