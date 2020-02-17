@@ -21,7 +21,7 @@ class ChatWindow extends Component {
 
     return (
       <div className="chat-window">
-        <h2>Super Awesome Chat</h2>
+        <h2>Chat App</h2>
         <div className="name sender">{user.username}</div>
         <MessageHistory messages={messages} user={user} />
         <AddMessage onMessage={this.onMessage} />

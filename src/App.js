@@ -1,37 +1,37 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
-import ChatWindow from './ChatWindow';
+import React, { Component } from 'react'
+import logo from './logo.svg'
+import './App.css'
+import ChatWindow from './ChatWindow'
 
 class App extends Component {
-  users = [{ username: 'Coop' }, { username: 'Piroshki' }];
+  users = [{ username: 'User 1' }, { username: 'User 2' }]
   state = {
     messages: [{
-        username: 'Coop',
+        username: 'User 1',
         text: 'Hey bro'
       }
     ],
-  };
+  }
 
   // Manage the central app state
   handleMessage = (username, message) => {
     const newMessage = {
-      username: username,
-      text: message,
-    };
+      ['username']: username,
+      ['text']: message,
+    }
     this.setState(currentState => ({
-      messages: [currentState.messages.concat([newMessage])],
-    }));
-  };
+      messages: currentState.messages.concat([newMessage]),
+    }))
+  }
 
   render() {
-    const { messages } = this.state;
+    const { messages } = this.state
 
     return (
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">ReactND - Coding Practice</h1>
+          <h1 className="App-title">React State Practice</h1>
         </header>
         <div className="container">
           {this.users.map(user => (
@@ -44,8 +44,8 @@ class App extends Component {
           ))}
         </div>
       </div>
-    );
+    )
   }
 }
 
-export default App;
+export default App
