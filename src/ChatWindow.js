@@ -20,7 +20,7 @@ class ChatWindow extends Component {
         return (
             <div className="chat-window">
                 <h2>Chat App</h2>
-                <div className="name sender">{user.username}</div>
+                <div className="name">{user.username}</div>
                 <MessageHistory user={user} messages={messages}/>
                 <AddMessage onMessage={this.onMessage} />
             </div>

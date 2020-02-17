@@ -8,7 +8,7 @@ class App extends Component {
   state = {
     messages: [{
         username: 'User 1',
-        text: 'Hey bro'
+        text: `What's up`
       }
     ],
   }
@@ -16,8 +16,8 @@ class App extends Component {
   // Manage the central app state
   handleMessage = (username, message) => {
     const newMessage = {
-      ['username']: username,
-      ['text']: message,
+      'username': username,
+      'text': message,
     }
     this.setState(currentState => ({
       messages: currentState.messages.concat([newMessage]),

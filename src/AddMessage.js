@@ -1,34 +1,32 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 
 class AddMessage extends Component {
     state = {
         message: '',
-    };
+    }
 
-    // Update state
     // Gather values from the input event target
     handleInputChange = event => {
-        const { value } = event.target;
+        const { value } = event.target
         this.setState(() => ({
             message: value,
-        }));
-    };
+        }))
+    }
 
     handleSend = event => {
-        event.preventDefault();
-        // Invoke the callback function
-        this.props.onMessage(this.state.message);
-    };
+        event.preventDefault()
+        this.props.onMessage(this.state.message)
+    }
 
     isDisabled = () => {
-        const { message } = this.state;
-        return message === '';
-    };
+        const { message } = this.state
+        return message === ''
+    }
 
     render() {
-        const { message } = this.state;
-
+        const { message } = this.state
+        console.log(this.state)
         return (
             <div>
                 <form onSubmit={this.handleSend} className="input-group">
@@ -51,11 +49,10 @@ class AddMessage extends Component {
             </div> 
         )
     }
-};
+}
 
-// Add Prop-types
 AddMessage.propTypes = {
     onMessage: PropTypes.func.isRequired,
-};
+}
 
-export default AddMessage;
+export default AddMessage
